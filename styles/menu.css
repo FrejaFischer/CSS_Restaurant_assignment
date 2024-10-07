@@ -1,0 +1,89 @@
+@import '_variables.css';
+
+main {
+    article {
+        border-radius: var(--border-radius);
+        background-color: var(--secondary-yellow);
+        padding: var(--distance-small);
+        margin-top: var(--distance-x-small);
+
+        img {
+            width: 100%;
+            border-radius: var(--border-radius);
+        }
+
+        header {
+            background-color: var(--secondary-yellow);
+            margin: var(--distance-x-small) 0;
+        }
+
+        .price_container {
+            width: fit-content;
+            background-color: var(--primary-blue);
+            border-radius: var(--border-radius);
+            margin-top: var(--distance-x-small);
+            padding: var(--distance-xxx-small);
+            p {
+                width: fit-content;
+                font-weight:  var(--primary-x-bold-weight);
+                color: var(--off-white);
+                background-color: var(--accent-red);
+                border-radius: var(--border-radius-small);
+                padding: var(--distance-xxxx-small);
+            }
+        }
+    }
+
+    article:first-of-type {
+        margin-top: 0;
+    }
+}
+
+
+@media (min-width: 768px) {
+main {
+    padding-bottom: var(--distance-x-large);
+
+
+    article {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr;
+
+        img {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            margin-left: var(--distance-x-small);
+        }
+
+        > div {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+}
+
+}
+
+
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--distance-small);
+
+        article {
+            flex: 1 1 var(--menu-article-flex-size);
+            margin-top: 0;
+
+            img {
+                height: var(--menu-image-desk-height);
+                width: auto;
+            }
+
+            header {
+                margin: 0 0 var(--distance-x-small) 0;
+            }
+        }
+    }
+}
